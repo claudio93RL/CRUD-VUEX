@@ -12,7 +12,7 @@ export default new Vuex.Store({
   state: {
     lista: [],
     editarFormulario: false,
-    spinnig: false
+    loading: false
   },
   mutations: {
     SET_LIST(state, nuevaLista) {
@@ -69,10 +69,10 @@ export default new Vuex.Store({
       Axios.put(`pacientes/${id}`, patient)
         .then(res => {
           if (res.status === 200) {
-            contex.state.spinnig = true
+            contex.state.loading = true
             setTimeout(() => {
               contex.commit("UPDATE_PATIENT", res.data)
-              contex.state.spinnig = false
+              contex.state.loading = false
             }, 2000)
           }
         })

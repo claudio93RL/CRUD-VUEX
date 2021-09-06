@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <el-table
-      v-loading="$store.state.spinnig"
+      v-loading="$store.state.loading"
       element-loading-text="Loading..."
       element-loading-spinner="el-icon-loading"
       element-loading-background="rgba(0, 0, 0, 0.8)"
